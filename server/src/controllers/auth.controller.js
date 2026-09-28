@@ -55,7 +55,5 @@ export const getMe = async (req, res, next) => {
 }
 
 export const logout = (req, res) => {
-    return {
-        res.json({success: true, data: {message: "Logged out successfully"}})
-    }
+    return res.json({success: true, data: {message: "Logged out successfully"}})
 }
