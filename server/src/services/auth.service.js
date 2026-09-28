@@ -53,7 +53,7 @@ export const loginEmail = async (email, password) => {
 }
 
 
-const getUserProfile = async (userId) => {
+export const getUserProfile = async (userId) => {
     const user = await User.findById(userId);
 
     if(!user){
