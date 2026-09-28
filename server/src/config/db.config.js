@@ -11,4 +11,10 @@ const connectDB = async () => {
         const conn = await mongoose.connect(mongoURL)
         console.log(`MongoDB Connection Error: ${error.message}`)
     }
+    catch(error){
+        console.error(`MongoDB Connection Error: ${error.message}`);
+        process.exit(1)
+    }
 }
+
+export default connectDB

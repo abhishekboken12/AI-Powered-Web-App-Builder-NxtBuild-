@@ -1,0 +1,23 @@
+import express from 'express'
+import cors from "cors"
+import routes from './routes/index.js'
+
+import {errorHandler,
+        notFoundHandle} from './middleware/error.middleware.js'
+
+const app = express()
+
+
+app.use(cors({origin : precess.env.CLIENT_URL || "http://localhost:5173"}))
+
+
+// convert incomming JSON requests to javascript objects
+app.use(express.json())
+
+//Mount all API routes under /api
+app.use("/api", routes)
+
+app.use(notFoundHandle)
+app.use(errorHandler)
+
+export default app
